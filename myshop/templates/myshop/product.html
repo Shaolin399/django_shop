@@ -1,0 +1,43 @@
+<!-- product.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі товару - SmartShop</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo"><a href='../../../PycharmProjects/Shop/myshop/templates/myshop/index.html'>SmartShop</a></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Я шукаю...">
+                <button>ЗНАЙТИ</button>
+            </div>
+            <div class="user-actions">
+                <button onclick="window.location.href = 'faq.html'">FAQ</button>
+                <button onclick="window.location.href = 'contact_us.html'">Контакти</button>
+                <button onclick="window.location.href = 'login.html'">Вхід</button>
+                <button onclick="window.location.href = 'register.html'">Реєстрація</button>
+                <button class="cart-btn" id="cart-btn">
+                    <img class="cart-img" src="img/shopping_cart.png" alt="Cart" />
+                    <div class="cart-num" id="cart-num">0</div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="product-page-container">
+        <div class="product-details">
+            <img src="" alt="">
+            <h1></h1>
+            <p class="price"></p>
+            <p>Опис товару. Додайте власні деталі товару тут.</p>
+            <button class="add-to-cart">Додати у корзину</button>
+        </div>
+    </main>
+
+    <script src="product_script.js"></script>
+</body>
+</html>

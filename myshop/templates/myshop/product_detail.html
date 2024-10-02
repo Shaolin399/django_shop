@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }} - SmartShop</title>
+    <link rel="stylesheet" href="{% static 'myshop/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myshop/css/product.css' %}">
+</head>
+<body>
+    {% include 'myshop/header.html' %}
+
+    <main>
+        <section class="product-detail">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h1>{{ product.name }}</h1>
+            <p class="price">Ціна: {{ product.price }} ₴</p>
+            <p>Бренд: {{ product.brand }}</p>
+            <p>Пам'ять: {{ product.memory }} GB</p>
+            <p>ОЗП: {{ product.ram }} GB</p>
+            <p>Батарея: {{ product.battery_capacity }} mAh</p>
+            <p>Основна камера: {{ product.camera_resolution }} MP</p>
+            <p>Колір: {{ product.color }}</p>
+            <p>{{ product.description }}</p>
+            <button class="add-to-cart-btn">Додати у корзину</button>
+        </section>
+    </main>
+
+    {% include 'myshop/footer.html' %}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'myshop/js/script.js' %}"></script>
+</body>
+</html>

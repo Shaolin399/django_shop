@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop</title>
+    <link rel="stylesheet" href="{% static 'myshop/css/style.css' %}">
+</head>
+<body>
+    {% include 'myshop/header.html' %}
+
+    <main>
+        {% include 'myshop/filter.html' %}
+
+        <section class="products">
+            <div class="sorting">
+                <button id="sorting-by-popularity">Популярні</button>
+                <button id="sorting-from-high-to-low">Від дорогих до дешевих</button>
+                <button id="sorting-from-low-to-high">Від дешевих до дорогих</button>
+            </div>
+            <div class="product-grid">
+                {% for product in products %}
+                    <div class="product-tile"
+                         data-price="{{ product.price }}"
+                         data-memory="{{ product.memory }}"
+                         data-brand="{{ product.brand }}"
+                         data-battery="{{ product.battery_capacity }}"
+                         data-camera-resolution="{{ product.camera_resolution }}">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        <h3><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h3>
+                        <p class="price">{{ product.price }} ₴</p>
+                        <button class="add-to-cart-btn">Додати у корзину</button>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    {% include 'myshop/footer.html' %}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'myshop/js/script.js' %}"></script>
+</body>
+</html>

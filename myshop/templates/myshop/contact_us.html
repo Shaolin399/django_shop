@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'myshop/css/style.css' %}">
+</head>
+<body>
+    {% include 'myshop/header.html' %}
+
+    <section id="contact">
+        <div class="contact-container">
+            <h2 class="contact-heading">Зв'яжіться з нами</h2>
+            <hr>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Ім'я</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Електронна пошта</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Повідомлення</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="contact-btn">Надіслати</button>
+            </form>
+        </div>
+    </section>
+
+    {% include 'myshop/footer.html' %}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'myshop/js/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- shopping_cart.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop - Кошик</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo"><a href='../../../PycharmProjects/Shop/myshop/templates/myshop/index.html'>SmartShop</a></div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Я шукаю...">
+                <button id="search-btn">ЗНАЙТИ</button>
+            </div>            
+            <div class="user-actions">
+                <button onclick="window.location.href = 'faq.html'">FAQ</button>
+                <button onclick="window.location.href = 'contact_us.html'">Контакти</button>
+                <button onclick="window.location.href = 'login.html'">Вхід</button>
+                <button onclick="window.location.href = 'register.html'">Реєстрація</button>
+                <button class="cart-btn" id="cart-btn">
+                    <img class="cart-img" src="img/shopping_cart.png" alt="Cart" />
+                    <div class="cart-num" id="cart-num">0</div>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Кошик</h1>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total">
+            <p>Загальна сума: <span id="cart-total">0 ₴</span></p>
+            <button id="checkout-btn">Оформити замовлення</button>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Про нас</h3>
+                <p>Ваш магазин сучасних смартфонів. Ми пропонуємо найкращі пропозиції на ринку.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Швидкі посилання</h3>
+                <ul>
+                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Контакти</h3>
+                <p>Email: info@smartshop.com</p>
+                <p>Телефон: +380 123 456 789</p>
+                <p>Адреса: вул. Програмування 10, м. Харків</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 SmartShop | Усі права захищені
+        </div>
+    </footer>
+    <script src="shopping_cart.js"></script>
+</body>
+</html>

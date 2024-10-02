@@ -1,0 +1,27 @@
+{% load static %}
+<header>
+    <div class="top-bar">
+        <div class="logo"><a href="{% url 'index' %}">SmartShop</a></div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Я шукаю...">
+            <button id="search-btn">ЗНАЙТИ</button>
+        </div>
+        <div class="user-actions">
+            <button onclick="window.location.href = '{% url 'faq' %}'">FAQ</button>
+            <button onclick="window.location.href = '{% url 'contact_us' %}'">Контакти</button>
+            <button onclick="window.location.href = '{% url 'login' %}'">Вхід</button>
+            <button onclick="window.location.href = '{% url 'register' %}'">Реєстрація</button>
+            <button class="cart-btn" id="cart-btn">
+                <img class="cart-img" src="{% static 'myshop/img/shopping_cart.png' %}" alt="Cart" />
+                <div class="cart-num" id="cart-num">0</div>
+            </button>
+        </div>
+    </div>
+    <nav>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Swiper slides for categories can be dynamically loaded from the database -->
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,49 @@
+<!-- filter.html -->
+
+<aside>
+    <h2>Фільтри</h2>
+    <button id="clear-filters-btn">Очистити фільтри</button>
+    <div class="filter">
+        <label for="min-price">Ціна, ₴</label>
+        <div class="price-inputs">
+            <input type="number" id="min-price" placeholder="Від">
+            <input type="number" id="max-price" placeholder="До">
+        </div>
+    </div>
+    <div class="filter">
+        <label for="memory">Вбудована пам'ять</label>
+        <select id="memory">
+            <option value="">Оберіть пам'ять</option>
+            {% for memory in filter_options.memories %}
+                <option value="{{ memory }}">{{ memory }} ГБ</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <label for="brand">Бренд</label>
+        <select id="brand">
+            <option value="">Оберіть бренд</option>
+            {% for brand in filter_options.brands %}
+                <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <label for="battery">Об'єм акумулятора</label>
+        <select id="battery">
+            <option value="">Оберіть об'єм</option>
+            {% for battery in filter_options.batteries %}
+                <option value="{{ battery }}">{{ battery }} мАг</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="filter">
+        <label for="camera-resolution">Роздільна здатність камери</label>
+        <select id="camera-resolution">
+            <option value="">Оберіть роздільність</option>
+            {% for resolution in filter_options.cameraResolutions %}
+                <option value="{{ resolution }}">{{ resolution }} Мп</option>
+            {% endfor %}
+        </select>
+    </div>
+</aside>
